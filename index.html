@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <title>nineteen candles</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Pacifico&display=swap');
+
+      html {
+        font-size: 2vw;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      body {
+        background-color: #242424;
+        color: #fff;
+        font-size: 1.5em;
+        font-family: 'Montserrat', sans-serif;
+      }
+      h1 {
+        font-size: 3em;
+        font-family: 'Pacifico', cursive;
+        letter-spacing: 0.1em;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #7454BF 0%, #CDB8FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      button {
+        outline: none;
+        color: #CDB8FF;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+      .large {
+        font-size: 8em;
+        margin: 0.5em;
+        color: #CDB8FF;
+      }
+      b {
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+      }
+      #memorytxt {
+        height: 15vh;
+      }
+      .hide {
+        opacity: 0;
+        transition: opacity 1000ms;
+      }
+      .show {
+        opacity: 1;
+        transition: opacity 1000ms;
+      }
+
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>nineteen candles</h1>
+      <button id="memory" onclick="memClick()"><i class="material-icons large">favorite_border</i></button>
+      <div id="memorytxt">somehow, I managed to narrow down nineteen of my favourite memories with you.<br>
+        click the heart to generate one.</div>
+    </div>
+
+    <script>
+        let memBank = ["<b>\u00231:</b> our first kiss",
+          "<b>\u00233:</b> beach day at island view and having so many dog alerts",
+          "<b>\u00234:</b> every time we absolutely crush a study session",
+          "<b>\u00235:</b> the coffee concert, and you losing your mind at the clown crosswalks in brentwood",
+          "<b>\u00236:</b> when we went to the fantastic pizza place",
+          "<b>\u00237:</b> our first date (I still can't believe it was to a bookshop)",
+          "<b>\u00238:</b> drunk scrabble",
+          "<b>\u00239:</b> our first christmas",
+          "<b>\u002310:</b> the unexpected surprise on valentine\u0027s day",
+          "<b>\u002311:</b> the first time we cooked together, and every time after that",
+          "<b>\u002312:</b> when you played piano for me and I absolutely lost it",
+          "<b>\u002312:</b> seeing the children\u0027s hour",
+          "<b>\u002313:</b> the first time you wrote me a letter and it really was an unexpected surprise",
+          "<b>\u002314:</b> beach date, and finding a rock to match your impossibly colour-changing eyes",
+          "<b>\u002315:</b> watching you play in gvyo",
+          "<b>\u002316:</b> the first time we said 'I love you'",
+          "<b>\u002317:</b> every time we get to be a power couple in class",
+          "<b>\u002318:</b> our first movie night, and every movie night",
+          "<b>\u002319:</b> every moment I get to spend with you, always & forever",
+          "<b>\u00232:</b> when we geeked out about bats and cried because we were reading the same set of bat facts"];
+
+        let p = 500;
+
+        function memClick() {
+          let i = Math.floor(Math.random() * memBank.length);
+          if (i == p) {
+            p = 500;
+            memClick();
+          } else {
+            let randMem = memBank[i];
+            p = i;
+            $('#memorytxt').animate({'opacity': 0}, 1500, function () {
+              $(this).html(randMem);
+            }).animate({'opacity': 1}, 1500);
+          }
+        }
+        
+    </script>
+
+  </body>
+</html>
