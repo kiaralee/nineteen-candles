@@ -38,6 +38,7 @@ button, button:focus, button:active, button:focus:active {
   cursor: pointer;
   -webkit-box-shadow: none;
   margin: 4.5em;
+  opacity: 1;
 }
 .large {
   font-size: 8em;
@@ -62,6 +63,6 @@ b {
     width: 90%;
   }
   .large {
-    font-size: 7.5em;
+    font-size: 7em;
   }
 }
