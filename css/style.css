@@ -47,3 +47,16 @@ b {
 }
 #memorytxt {
   height: 15vh;
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    font-size: 2.75em;
+  }
+  h1 {
+    font-size: 3.25em;
+  }
+  .container {
+    width: 90%;
+  }
+}
