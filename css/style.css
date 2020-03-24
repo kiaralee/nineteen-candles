@@ -37,10 +37,10 @@ button, button:focus, button:active, button:focus:active {
   border: none;
   cursor: pointer;
   -webkit-box-shadow: none;
+  margin: 4.5em;
 }
 .large {
   font-size: 8em;
-  margin: 0.5em;
   color: #CDB8FF;
 }
 b {
@@ -60,5 +60,8 @@ b {
   }
   .container {
     width: 90%;
+  }
+  .large {
+    font-size: 7.5em;
   }
 }
